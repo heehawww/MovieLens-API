@@ -1,0 +1,19 @@
+[project]
+name = "movie-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "fastapi>=0.135.2",
+    "httpx>=0.28.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "pandas>=1.4.0,<3.0.0",
+    "pytest>=9.0.2",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
+    "slowapi>=0.1.9",
+    "streamlit>=1.40.0",
+    "uvicorn>=0.42.0",
+]

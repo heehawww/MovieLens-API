@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    command: uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/status')"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  frontend:
+    build: .
+    ports:
+      - "8501:8501"
+    command: uv run python -m streamlit run app/frontend.py --server.port 8501 --server.address 0.0.0.0
+    environment:
+      - API_URL=http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy   # wait until API passes healthcheck
