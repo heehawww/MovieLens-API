@@ -82,7 +82,7 @@ Returns the top 5 most similar movies based on SVD cosine similarity.
 GET /movies/1/similar
 ```
 
-**Response**
+**Response** - returns a list of 5 movies ordered by final score descending (only one shown below).
 ```json
 [
   {
@@ -118,7 +118,7 @@ and IDF-weighted genre profile matching.
 |-------|------|----------|-------------|
 | movie_ids | list[int] | Yes | 2–5 movie IDs |
 
-**Response**
+**Response** - returns a list of 5 movies ordered by final score descending (only one shown below).
 ```json
 [
   {
@@ -141,7 +141,7 @@ and IDF-weighted genre profile matching.
 
 ## Setup
 
-### Option 1 — Docker (recommended)
+### Option 1 — Docker 
 Requires [Docker Desktop](https://www.docker.com/products/docker-desktop).
 ```bash
 docker-compose up --build
