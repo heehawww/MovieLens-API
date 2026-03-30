@@ -54,7 +54,7 @@ with tab2:
 # ── Recommendations ─────────────────────────────
 with tab3:
     st.subheader("Blended Recommendations")
-    st.caption("Enter 2–5 movie IDs to get personalised recommendations based on SVD similarity and genre profile matching.")
+    st.caption("Enter 2–5 unique movie IDs to get personalised recommendations based on SVD similarity and genre profile matching.")
     liked_input = st.text_input("Movie IDs (e.g. 1, 50, 172)")
 
     if st.button("Get Recommendations"):
